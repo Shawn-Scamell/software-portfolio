@@ -4,10 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
-    <title>Document</title>
+    <title>Shawn Scamell — Software Developer</title>
 </head>
 <body>
-    
+
+    <header class="nav-header">
+        <nav class="nav-container">
+            <a href="#hero" class="nav-logo">Shawn Scamell</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <p class="hero-greeting">Hi, I'm</p>
+                <h1 class="hero-name">Shawn Scamell</h1>
+                <h2 class="hero-title">Software Developer</h2>
+                <p class="hero-bio">I build clean, thoughtful software. Focused on creating experiences that are both functional and delightful.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="section-container">
+                <h2 class="section-title">About</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I'm a software developer passionate about building things that matter. I enjoy working across the stack and am always looking to learn something new.</p>
+                        <p>When I'm not writing code, I'm probably learning languages — including German!</p>
+                    </div>
+                    <div class="about-image-placeholder">
+                        <span>Photo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section section-alt">
+            <div class="section-container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">&#9632;</span>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub">GH</a>
+                                <a href="#" aria-label="Live">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Project One</h3>
+                        <p class="project-desc">A short description of what this project does and the problem it solves.</p>
+                        <ul class="project-tags">
+                            <li>JavaScript</li>
+                            <li>Node.js</li>
+                            <li>CSS</li>
+                        </ul>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">&#9632;</span>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub">GH</a>
+                                <a href="#" aria-label="Live">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Project Two</h3>
+                        <p class="project-desc">A short description of what this project does and the problem it solves.</p>
+                        <ul class="project-tags">
+                            <li>React</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                        </ul>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-icon">&#9632;</span>
+                            <div class="project-links">
+                                <a href="#" aria-label="GitHub">GH</a>
+                                <a href="#" aria-label="Live">↗</a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Project Three</h3>
+                        <p class="project-desc">A short description of what this project does and the problem it solves.</p>
+                        <ul class="project-tags">
+                            <li>TypeScript</li>
+                            <li>REST API</li>
+                            <li>AWS</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                            <li>Python</li>
+                            <li>HTML / CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Frameworks</h3>
+                        <ul>
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>Express</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Tools</h3>
+                        <ul>
+                            <li>Git</li>
+                            <li>VS Code</li>
+                            <li>SQL</li>
+                            <li>REST APIs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section section-alt">
+            <div class="section-container section-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-text">Have a project in mind or just want to say hello? My inbox is always open.</p>
+                <a href="mailto:your@email.com" class="btn btn-primary">Say Hello</a>
+                <div class="social-links">
+                    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Designed &amp; Built by Shawn Scamell</p>
+    </footer>
+
     <script src="src/index.js"></script>
 </body>
 </html>
