@@ -1,42 +1,62 @@
 // ── Theme ──────────────────────────────────────────────────────────────
+// Three modes: 'auto' (follow OS), 'light', 'dark'
+// 'auto' is stored as a missing localStorage key so the OS listener
+// can check for it with a simple !localStorage.getItem('theme')
 
-const html = document.documentElement;
-const toggleBtn = document.getElementById('themeToggle');
+const html       = document.documentElement;
+const toggleBtn  = document.getElementById('themeToggle');
 const toggleIcon = toggleBtn.querySelector('.theme-toggle-icon');
 const toggleLabel = toggleBtn.querySelector('.theme-toggle-label');
+const osQuery    = window.matchMedia('(prefers-color-scheme: dark)');
 
-function applyTheme(theme) {
-    if (theme === 'light') {
+function applyTheme(mode) {
+    // Work out what to actually render
+    const effective = mode === 'auto'
+        ? (osQuery.matches ? 'dark' : 'light')
+        : mode;
+
+    if (effective === 'light') {
         html.setAttribute('data-theme', 'light');
-        toggleIcon.textContent = '☀️';
-        toggleLabel.textContent = 'Light';
-        toggleBtn.setAttribute('aria-label', 'Switch to dark mode');
     } else {
         html.removeAttribute('data-theme');
-        toggleIcon.textContent = '🌙';
+    }
+
+    // Update button label
+    if (mode === 'auto') {
+        toggleIcon.textContent  = '🖥️';
+        toggleLabel.textContent = 'Auto';
+        toggleBtn.setAttribute('aria-label', 'Theme: Auto — click for Light');
+    } else if (mode === 'light') {
+        toggleIcon.textContent  = '☀️';
+        toggleLabel.textContent = 'Light';
+        toggleBtn.setAttribute('aria-label', 'Theme: Light — click for Dark');
+    } else {
+        toggleIcon.textContent  = '🌙';
         toggleLabel.textContent = 'Dark';
-        toggleBtn.setAttribute('aria-label', 'Switch to light mode');
+        toggleBtn.setAttribute('aria-label', 'Theme: Dark — click for Auto');
     }
 }
 
-// Initialise: saved preference → system preference → dark default
+// Initialise: saved preference → auto
 const saved = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-applyTheme(saved ?? (prefersDark ? 'dark' : 'light'));
+applyTheme(saved ?? 'auto');
 
+// Cycle: auto → light → dark → auto
+const cycle = { auto: 'light', light: 'dark', dark: 'auto' };
 toggleBtn.addEventListener('click', () => {
-    const isLight = html.getAttribute('data-theme') === 'light';
-    const next = isLight ? 'dark' : 'light';
+    const current = localStorage.getItem('theme') ?? 'auto';
+    const next    = cycle[current];
+    if (next === 'auto') {
+        localStorage.removeItem('theme');
+    } else {
+        localStorage.setItem('theme', next);
+    }
     applyTheme(next);
-    localStorage.setItem('theme', next);
 });
 
-// Follow OS theme changes in real time — but only if the user hasn't
-// manually picked a theme via the toggle (localStorage takes priority)
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if (!localStorage.getItem('theme')) {
-        applyTheme(e.matches ? 'dark' : 'light');
-    }
+// Follow OS changes in real time when in auto mode
+osQuery.addEventListener('change', () => {
+    if (!localStorage.getItem('theme')) applyTheme('auto');
 });
 
 // ── Hamburger menu ────────────────────────────────────────────────────
