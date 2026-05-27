@@ -31,6 +31,14 @@ toggleBtn.addEventListener('click', () => {
     localStorage.setItem('theme', next);
 });
 
+// Follow OS theme changes in real time — but only if the user hasn't
+// manually picked a theme via the toggle (localStorage takes priority)
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches ? 'dark' : 'light');
+    }
+});
+
 // ── Hamburger menu ────────────────────────────────────────────────────
 
 const navHeader = document.querySelector('.nav-header');
