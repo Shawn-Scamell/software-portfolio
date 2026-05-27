@@ -23,7 +23,7 @@ function applyTheme(mode) {
 
     // Update button label
     if (mode === 'auto') {
-        toggleIcon.textContent  = '🖥️';
+        toggleIcon.textContent  = effective === 'light' ? '☀️' : '🌙';
         toggleLabel.textContent = 'Auto';
         toggleBtn.setAttribute('aria-label', 'Theme: Auto — click for Light');
     } else if (mode === 'light') {
