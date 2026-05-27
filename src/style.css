@@ -794,7 +794,7 @@ a:hover {
         gap: 1.25rem;
     }
 
-    /* Theme toggle — hide label on very small screens */
+    /* Theme toggle — hide label on small screens except in Auto mode */
     .theme-toggle-label {
         display: none;
     }
@@ -803,5 +803,14 @@ a:hover {
         width: 38px;
         justify-content: center;
         padding: 0;
+    }
+
+    .theme-toggle[data-mode="auto"] {
+        width: auto;
+        padding: 0 0.6rem;
+    }
+
+    .theme-toggle[data-mode="auto"] .theme-toggle-label {
+        display: inline;
     }
 }

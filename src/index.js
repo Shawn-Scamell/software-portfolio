@@ -22,6 +22,7 @@ function applyTheme(mode) {
     }
 
     // Update button label
+    toggleBtn.dataset.mode = mode;
     if (mode === 'auto') {
         toggleIcon.textContent  = effective === 'light' ? '☀️' : '🌙';
         toggleLabel.textContent = 'Auto';
