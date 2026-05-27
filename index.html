@@ -44,7 +44,7 @@
         <nav class="nav-container">
             <a href="#hero" class="nav-logo">Shawn Scamell</a>
             <div class="nav-right">
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -53,6 +53,11 @@
                 <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode">
                     <span class="theme-toggle-icon">🌙</span>
                     <span class="theme-toggle-label">Dark</span>
+                </button>
+                <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </nav>
@@ -92,59 +97,95 @@
             <div class="section-container">
                 <h2 class="section-title">Projects</h2>
                 <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="project-header">
-                            <span class="project-icon">&#9632;</span>
-                            <div class="project-links">
-                                <a href="#" aria-label="GitHub">GH</a>
-                                <a href="#" aria-label="Live">↗</a>
+
+                    <article class="project-card" id="project-shopify">
+                        <a class="project-preview" href="https://kta10h-a1.myshopify.com/" target="_blank" rel="noopener" aria-label="View live site">
+                            <img src="src/img/shopify-preview.png" alt="Custom Shopify Theme live site preview" class="project-img" loading="lazy">
+                            <span class="project-preview-overlay">View Site ↗</span>
+                        </a>
+                        <div class="project-body">
+                            <h3 class="project-title">Custom Shopify Theme</h3>
+                            <p class="project-desc">Built a fully custom Shopify theme from the ground up for a client — no template, no page builder. Covers the full storefront including product pages, collections, cart, and checkout flow.</p>
+                            <ul class="project-tags">
+                                <li>Shopify Liquid</li>
+                                <li>JavaScript</li>
+                                <li>HTML / CSS</li>
+                            </ul>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-private">🔒 Private repo</span>
+                            <div class="project-actions">
+                                <a href="#testimonial-shopify" class="project-action-link">Client testimonial ↓</a>
+                                <a href="https://kta10h-a1.myshopify.com/" target="_blank" rel="noopener" class="project-action-btn">View Live ↗</a>
                             </div>
                         </div>
-                        <h3 class="project-title">Project One</h3>
-                        <p class="project-desc">A short description of what this project does and the problem it solves.</p>
-                        <ul class="project-tags">
-                            <li>JavaScript</li>
-                            <li>Node.js</li>
-                            <li>CSS</li>
-                        </ul>
                     </article>
+
                     <article class="project-card">
-                        <div class="project-header">
-                            <span class="project-icon">&#9632;</span>
-                            <div class="project-links">
-                                <a href="#" aria-label="GitHub">GH</a>
-                                <a href="#" aria-label="Live">↗</a>
+                        <div class="project-preview project-preview--placeholder">
+                            <span>Screenshot coming soon</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Project Two</h3>
+                            <p class="project-desc">A short description of what this project does and the problem it solves.</p>
+                            <ul class="project-tags">
+                                <li>React</li>
+                                <li>Python</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-actions">
+                                <a href="#" class="project-action-link">GitHub ↗</a>
+                                <a href="#" class="project-action-btn">View Live ↗</a>
                             </div>
                         </div>
-                        <h3 class="project-title">Project Two</h3>
-                        <p class="project-desc">A short description of what this project does and the problem it solves.</p>
-                        <ul class="project-tags">
-                            <li>React</li>
-                            <li>Python</li>
-                            <li>SQL</li>
-                        </ul>
                     </article>
+
                     <article class="project-card">
-                        <div class="project-header">
-                            <span class="project-icon">&#9632;</span>
-                            <div class="project-links">
-                                <a href="#" aria-label="GitHub">GH</a>
-                                <a href="#" aria-label="Live">↗</a>
+                        <div class="project-preview project-preview--placeholder">
+                            <span>Screenshot coming soon</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Project Three</h3>
+                            <p class="project-desc">A short description of what this project does and the problem it solves.</p>
+                            <ul class="project-tags">
+                                <li>TypeScript</li>
+                                <li>REST API</li>
+                                <li>AWS</li>
+                            </ul>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-actions">
+                                <a href="#" class="project-action-link">GitHub ↗</a>
+                                <a href="#" class="project-action-btn">View Live ↗</a>
                             </div>
                         </div>
-                        <h3 class="project-title">Project Three</h3>
-                        <p class="project-desc">A short description of what this project does and the problem it solves.</p>
-                        <ul class="project-tags">
-                            <li>TypeScript</li>
-                            <li>REST API</li>
-                            <li>AWS</li>
-                        </ul>
                     </article>
+
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="section">
+        <section id="testimonials" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Testimonials</h2>
+                <div class="testimonials-grid">
+                    <blockquote class="testimonial-card" id="testimonial-shopify">
+                        <a href="#project-shopify" class="testimonial-project-ref">↑ Custom Shopify Theme</a>
+                        <p class="testimonial-quote">"Placeholder — your client testimonial goes here."</p>
+                        <footer class="testimonial-author">
+                            <div class="testimonial-info">
+                                <span class="testimonial-name">Client Name</span>
+                                <span class="testimonial-role">Business Name</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section section-alt">
             <div class="section-container">
                 <h2 class="section-title">Skills</h2>
                 <div class="skills-grid">
@@ -155,6 +196,7 @@
                             <li>TypeScript</li>
                             <li>Python</li>
                             <li>HTML / CSS</li>
+                            <li>Shopify Liquid</li>
                         </ul>
                     </div>
                     <div class="skill-group">

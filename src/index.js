@@ -31,6 +31,38 @@ toggleBtn.addEventListener('click', () => {
     localStorage.setItem('theme', next);
 });
 
+// ── Hamburger menu ────────────────────────────────────────────────────
+
+const navHeader = document.querySelector('.nav-header');
+const hamburger = document.getElementById('navHamburger');
+const navMenu   = document.getElementById('navLinks');
+
+function closeMenu() {
+    navHeader.classList.remove('nav-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-label', 'Open menu');
+    document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+    const isOpen = navHeader.classList.toggle('nav-open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+// Close when a nav link is tapped
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+// Close when tapping outside the nav
+document.addEventListener('click', e => {
+    if (navHeader.classList.contains('nav-open') && !navHeader.contains(e.target)) {
+        closeMenu();
+    }
+});
+
 // ── Active nav link on scroll ──────────────────────────────────────────
 
 const sections = document.querySelectorAll('section[id]');
