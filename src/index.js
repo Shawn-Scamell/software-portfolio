@@ -92,6 +92,42 @@ document.addEventListener('click', e => {
     }
 });
 
+// ── Contact form ──────────────────────────────────────────────────────
+
+const contactForm = document.getElementById('contactForm');
+const formSubmit  = document.getElementById('formSubmit');
+const formStatus  = document.getElementById('formStatus');
+
+contactForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    formSubmit.disabled = true;
+    formSubmit.querySelector('.form-submit-text').textContent = 'Sending…';
+    formStatus.className = 'form-status';
+    formStatus.textContent = '';
+
+    try {
+        const res  = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: new FormData(contactForm)
+        });
+        const data = await res.json();
+
+        if (data.success) {
+            formStatus.className = 'form-status success';
+            formStatus.textContent = '✓ Message sent — I\'ll be in touch soon!';
+            contactForm.reset();
+        } else {
+            throw new Error(data.message);
+        }
+    } catch (err) {
+        formStatus.className = 'form-status error';
+        formStatus.textContent = '✕ Something went wrong. Try emailing me directly.';
+    } finally {
+        formSubmit.disabled = false;
+        formSubmit.querySelector('.form-submit-text').textContent = 'Send Message';
+    }
+});
+
 // ── Active nav link on scroll ──────────────────────────────────────────
 
 const sections = document.querySelectorAll('section[id]');

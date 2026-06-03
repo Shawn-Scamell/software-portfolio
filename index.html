@@ -87,7 +87,7 @@
                 <div class="about-grid">
                     <div class="about-text">
                         <p>I'm a software developer passionate about building things that matter. I love diving into hard problems and am always looking to learn something new.</p>
-                        <p>When I'm not writing code, I'm probably learning languages — including German!</p>
+                        <!-- <p>When I'm not writing code, I'm probably learning languages — including German!</p> -->
                     </div>
                     <div class="about-image">
                         <!-- <span>Photo</span> -->
@@ -218,6 +218,7 @@
                             <li>VS Code</li>
                             <li>SQL</li>
                             <li>REST APIs</li>
+                            <li>Web3Forms</li>
                         </ul>
                     </div>
                 </div>
@@ -225,13 +226,65 @@
         </section>
 
         <section id="contact" class="section section-alt">
-            <div class="section-container section-center">
+            <div class="section-container">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="contact-text">Have a project in mind or just want to say hello? My inbox is always open.</p>
-                <a href="mailto:shawn@shawnscamell.com" class="btn btn-primary">Say Hello</a>
-                <div class="social-links">
-                    <a href="https://github.com/Shawn-Scamell" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+                <p class="contact-intro">Have a project in mind or want to collaborate? Send a message or reach out directly.</p>
+
+                <div class="contact-grid">
+
+                    <!-- Contact info -->
+                    <div class="contact-info-card">
+                        <h3 class="contact-card-title">Contact Information</h3>
+                        <p class="contact-card-sub">Other ways to reach me</p>
+                        <ul class="contact-details">
+                            <li>
+                                <span class="contact-detail-icon">✉</span>
+                                <a href="mailto:hello@shawnscamell.com">hello@shawnscamell.com</a>
+                            </li>
+                            <li>
+                                <span class="contact-detail-icon">◎</span>
+                                <span>Essex, UK · near London</span>
+                            </li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://github.com/Shawn-Scamell" target="_blank" rel="noopener">GitHub</a>
+                            <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact form -->
+                    <div class="contact-form-card">
+                        <h3 class="contact-card-title">Send a Message</h3>
+                        <p class="contact-card-sub">I usually respond within 24–48 hours.</p>
+
+                        <form id="contactForm" class="contact-form">
+                            <!-- Web3Forms access key — get yours free at web3forms.com -->
+                            <input type="hidden" name="access_key" value="23374590-9ad5-4e41-bc97-6f7d981d9b6c">
+                            <input type="hidden" name="subject" value="New message from shawnscamell.com">
+                            <!-- Honeypot spam prevention -->
+                            <input type="checkbox" name="botcheck" style="display:none">
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="form-submit" id="formSubmit">
+                                <span class="form-submit-text">Send Message</span>
+                            </button>
+
+                            <p class="form-status" id="formStatus" aria-live="polite"></p>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </section>
