@@ -147,22 +147,23 @@
                     </article>
 
                     <article class="project-card">
-                        <div class="project-preview project-preview--placeholder">
-                            <span>Screenshot coming soon</span>
-                        </div>
+                        <a class="project-preview" href="https://shawnscamell.com" target="_blank" rel="noopener" aria-label="View live site">
+                            <img src="src/img/portfolio-preview.png" alt="Shawn Scamell portfolio site preview" class="project-img" loading="lazy">
+                            <span class="project-preview-overlay">View Site ↗</span>
+                        </a>
                         <div class="project-body">
-                            <h3 class="project-title">Project Three</h3>
-                            <p class="project-desc">A short description of what this project does and the problem it solves.</p>
+                            <h3 class="project-title">This Portfolio</h3>
+                            <p class="project-desc">Personal portfolio site with light, dark, and auto OS theme modes, a Web3Forms contact form, mobile-responsive layout, and SEO structured data.</p>
                             <ul class="project-tags">
-                                <li>TypeScript</li>
-                                <li>REST API</li>
-                                <li>AWS</li>
+                                <li>JavaScript</li>
+                                <li>HTML / CSS</li>
+                                <li>Web3Forms</li>
                             </ul>
                         </div>
                         <div class="project-footer">
                             <div class="project-actions">
-                                <a href="#" class="project-action-link">GitHub ↗</a>
-                                <a href="#" class="project-action-btn">View Live ↗</a>
+                                <a href="https://github.com/Shawn-Scamell/software-portfolio" target="_blank" rel="noopener" class="project-action-link">GitHub ↗</a>
+                                <a href="https://shawnscamell.com" target="_blank" rel="noopener" class="project-action-btn">View Live ↗</a>
                             </div>
                         </div>
                     </article>
@@ -292,7 +293,13 @@
     </main>
 
     <footer class="footer">
-        <p>Designed &amp; Built by Shawn Scamell</p>
+        <div class="footer-links">
+            <a href="https://github.com/Shawn-Scamell" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:hello@shawnscamell.com">hello@shawnscamell.com</a>
+        </div>
+        <p class="footer-credit">Designed &amp; Built by Shawn Scamell</p>
+        <p class="footer-copy">&copy; <span id="footerYear"></span> Shawn Scamell. All rights reserved.</p>
     </footer>
 
     <script src="src/index.js"></script>

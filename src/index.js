@@ -128,6 +128,9 @@ contactForm.addEventListener('submit', async e => {
     }
 });
 
+// ── Footer year ───────────────────────────────────────────────────────
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
 // ── Active nav link on scroll ──────────────────────────────────────────
 
 const sections = document.querySelectorAll('section[id]');
