@@ -213,7 +213,7 @@ a:hover {
 }
 
 .hero-bio {
-    max-width: 540px;
+    max-width: 420px;
     margin-top: 1.5rem;
     color: var(--color-text-muted);
     font-size: 1.05rem;
